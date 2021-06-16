@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include<conio.h>
-#include<strings.h>
+#include<stdlib.h>
 
-char savepass(){
+
+char savepass(){                                           //function to save new password.
     char self[5],name[20], mid[30], pw[30];
     char con;
     FILE *pstr;
@@ -10,11 +10,11 @@ char savepass(){
     fgets(self,sizeof(self),stdin);
     puts("\nEnter The Account Name:");
     fgets(name,sizeof(name),stdin);
-    puts("Enter The Email ID used to Create or Login to that Account:\t");
+    puts("\nEnter The Email ID used to Create or Login to that Account:\t");
     fgets(mid,sizeof(mid),stdin);
-    puts("Enter The Password:\t");
+    puts("\nEnter The Password:\t");
     fgets(pw,sizeof(pw),stdin);
-    printf("Do you want to store it (y/n)...");
+    printf("\nDo you want to store it (y/n)...");
     scanf("%c",&con);
     if (con=='y'){
             pstr=fopen("pass.txt","a");
@@ -28,22 +28,22 @@ char savepass(){
 
 }
 
-char list_pass(){
+char list_pass(){                                           //function to list saved password.
 char fcont[200];
-puts("working");
 FILE *flst;
 flst=fopen("Pass.txt","r");
+if (flst==NULL){
+    puts("\n\t\t!!File Not Found!!");
+    inp();
+    }
 while (!feof(flst)){
 fgets(fcont,sizeof(fcont),flst);
 puts(fcont);}
 fclose(flst);
 }
 
-void main()
-{
+int inp(){
     int i;
-    char w[50]="Hey Seeker,Welcome to Passwd Keeper\n";
-    puts(w);
     puts("[1] Save a new Password\n[2] Show The saved Password\n");
     printf("Enter a Number to Continue... : ");
     scanf("%d",&i);
@@ -54,7 +54,18 @@ case 1:
 case 2:
     list_pass();
     break;
+default:
+    break;
+    }
+    return 0;
+}
+
+void main()
+{
+    char w[50]="Hey Seeker,Welcome to Passwd Keeper\n";
+    puts(w);
+    inp();
     }
 
-}
+
 

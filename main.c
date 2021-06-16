@@ -47,17 +47,19 @@ int inp(){
     puts("[1] Save a new Password\n[2] Show The saved Password\n");
     printf("Enter a Number to Continue... : ");
     scanf("%d",&i);
+    if (i>2){
+        puts("\n\t\t!!Invalid Input!!\n");
+        i=0;
+        inp();
+    }
     switch (i){
 case 1:
     savepass();
     break;
 case 2:
     list_pass();
-    break;
-default:
-    break;
-    }
-    return 0;
+    break;}
+return 0;
 }
 
 void main()

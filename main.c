@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include<stdlib.h>
 
+int inp();
 
 char savepass(){                                           //function to save new password.
     char self[5],name[20], mid[30], pw[30];
@@ -33,7 +34,7 @@ char fcont[200];
 FILE *flst;
 flst=fopen("Pass.txt","r");
 if (flst==NULL){
-    puts("\n\t\t!!File Not Found!!");
+    puts("\n\t\t!!File Not Found!!\n");
     inp();
     }
 while (!feof(flst)){

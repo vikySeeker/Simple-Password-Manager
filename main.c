@@ -66,7 +66,7 @@ return 0;
 
 void main()
 {
-    char w[105]="Welcome To Passwd Keeper\n------------------------\n\n    Developer : seeKer\n    version 1.0\n\n------------------------\n";
+    char w[130]="Welcome To Passwd Keeper\n------------------------\n\n    Developer : seeKer\n    version 1.0\n\n------------------------\n";
     puts(w);
     inp();
     }

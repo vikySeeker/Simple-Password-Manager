@@ -19,8 +19,9 @@ char savepass(){                                           //function to save ne
     scanf("%c",&con);
     if (con=='y'){
             pstr=fopen("pass.txt","a");
-    fprintf(pstr,"-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n\nAccount Name : %s\nMail ID : %s\nPassword : %s\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+",name,mid,pw);
+    fprintf(pstr,"\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n\nAccount Name : %s\nMail ID : %s\nPassword : %s\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+",name,mid,pw);
     fclose(pstr);
+    exit(1);
     }
     else if(con=='n'){
             puts("Not Saved!");
@@ -32,7 +33,7 @@ char savepass(){                                           //function to save ne
 char list_pass(){                                           //function to list saved password.
 char fcont[200];
 FILE *flst;
-flst=fopen("Pass.txt","r");
+flst=fopen("pass.txt","r");
 if (flst==NULL){
     puts("\n\t\t!!File Not Found!!\n");
     inp();
@@ -65,10 +66,7 @@ return 0;
 
 void main()
 {
-    char w[50]="Hey Seeker,Welcome to Passwd Keeper\n";
+    char w[105]="Welcome To Passwd Keeper\n------------------------\n\n    Developer : seeKer\n\n------------------------\n";
     puts(w);
     inp();
     }
-
-
-

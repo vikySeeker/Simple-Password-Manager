@@ -20,8 +20,9 @@ char savepass(){                                           //function to save ne
     if (con=='y'){
             pstr=fopen("pass.txt","a");
     fprintf(pstr,"\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n\nAccount Name : %s\nMail ID : %s\nPassword : %s\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+",name,mid,pw);
+    puts("\n\tStored Successfully!!\n\n");
     fclose(pstr);
-    exit(1);
+    inp();
     }
     else if(con=='n'){
             puts("Not Saved!");
@@ -42,6 +43,8 @@ while (!feof(flst)){
 fgets(fcont,sizeof(fcont),flst);
 puts(fcont);}
 fclose(flst);
+puts("\n\tListed Successfully!!\n\n");
+inp();
 }
 
 int inp(){

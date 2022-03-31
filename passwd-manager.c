@@ -88,10 +88,10 @@ inp();
 
 int inp(){
     int i;
-    puts("[1] Save a new Password\n[2] Show The saved Password\n[3] Create a Random Password.\n");
+    puts("[1] Save a new Password\n[2] Show The saved Password\n[3] Create a Random Password\n[4] Exit.\n");
     printf("Enter a Number to Continue... : ");
     scanf("%d",&i);
-    if (i>3){
+    if (i>4){
         puts("\n\t\t!!Invalid Input!!\n");
         i=0;
         inp();
@@ -105,6 +105,12 @@ case 2:
     break;
 case 3:
     rand_pass_gen();
+    break;
+case 4:
+    exit(0);
+    break;
+default:
+    exit(0);
     break;}
 return 0;
 }
